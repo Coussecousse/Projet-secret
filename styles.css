@@ -411,6 +411,7 @@ h2 {
   background-color: white;
   border: solid white; 
   height: 600px;
+  background: #58335a;
 }
 .card img {
   height: 60%;
@@ -419,7 +420,18 @@ h2 {
   object-position: center;
   clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
 }
+.card__city {
+  transform: translateY(-45px);
+  border: solid red;
+}
 h3 {
   text-align: center;
-  font-size: 2rem;
+  color: white;
+  font-size: 3.5rem;
+}
+.card__date, .card__counter {
+  color: snow;
+  height: 10%;
+  border: solid red;
+  transform: translateY(-30px);
 }

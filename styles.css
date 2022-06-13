@@ -1,0 +1,406 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: #ffffff;
+  height: 100vh;
+  width: 100vw;
+}
+main {
+  height: 100%;
+  width: 100%;
+}
+header {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  width: 100%;
+  height: 20%;
+  background-color: #e4009d;
+}
+h1,
+h2 {
+  font-family: "Luckiest Guy", cursive;
+  letter-spacing: 0.3rem;
+  text-shadow: 3px 3px 0px rgba(255, 255, 255, 0.3);
+}
+
+/*_____________________COLORS_____________________ */
+.color--white {
+  color: #fff;
+}
+
+/* ______________________NAV______________________ */
+header .container {
+  width: 90%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+header .nav__logo {
+  height: 100%;
+}
+header img,
+a {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+
+/* ______________________NAV__BOUTTON_______________ */
+
+header .nav__menu {
+  display: flex;
+  align-items: center;
+}
+header .nav__btn {
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  background-color: #e4009d;
+}
+header .nav__btn .btn-active {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.5s, opacity 0.5s linear;
+}
+header .btn-desactive {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s linear;
+}
+header .nav__menu .mobile-off {
+  display: none;
+}
+header .fa-heart-circle-plus,
+.fa-heart-circle-minus {
+  color: #fff;
+}
+
+/*____________________ NAV__MENU ___________________*/
+header nav ul {
+  position: absolute;
+  width: 100%;
+  list-style: none;
+  border-top: rgba(255, 255, 255, 0.6) solid 1px;
+  background: linear-gradient(#e4009d, #dca1c9);
+}
+header nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+header nav li {
+  cursor: pointer;
+  text-align: center;
+  padding: 0.5em;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.6);
+  animation: slidein 1s;
+}
+
+header .mobile-nav-hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s linear;
+}
+header .mobile-nav-not-hidden {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+/* _______________CAROUSEL OULALALA_______________ */
+#home {
+  height: 80%;
+  overflow: hidden;
+}
+#home .carousel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+#home .carousel__imgs {
+  height: 90%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: none;
+}
+#home img {
+  width: 100vw;
+  height: 72vh;
+  object-fit: cover;
+  object-position: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 1s linear;
+}
+#home .carousel__imgs .current_img {
+  visibility: visible;
+  z-index: -1;
+  opacity: 1;
+  transition: visibility 0.5s, opacity 0.5s linear;
+}
+/* _______________SLIDERS________________ */
+/* _______________BOUTTONS__________ */
+#home .carousel__sliders {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 10%;
+  width: 50%;
+  margin: 0 auto;
+}
+.carousel__sliders .slide {
+  cursor: pointer;
+}
+#home .slider__btn {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
+  margin: 0 2em;
+}
+
+.slider__btn button {
+  border: none;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 50%;
+  align-self: center;
+  background-color: #dca1c9;
+}
+.carousel__sliders button:hover,
+i:hover {
+  transform: scale(1.3);
+  transition: all 0.5s;
+}
+#home .slider__btn .slider__active {
+  background: rgb(143, 2, 143);
+  width: 1.3em;
+  height: 1.3em;
+  transition: all 0.5s ease;
+}
+/* GROUP PRESENTATION */
+/* GENERAL */
+#group-presentation {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+  background: linear-gradient(
+    0deg,
+    rgba(125, 215, 215, 1) 72%,
+    rgba(255, 255, 255, 1) 88%
+  );
+}
+h1 {
+  background: -webkit-radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 0.2em;
+  font-size: 6rem;
+}
+#group-presentation .click {
+  color: violet;
+  height: 3em;
+  font-size: 1.1rem;
+  text-align: center;
+}
+.click > * {
+  position: relative;
+  animation: topBottom 0.6s alternate infinite;
+}
+@keyframes topBottom {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translateY(5px);
+  }
+}
+/* PHOTOS */
+
+#group-presentation .group__photos {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1em;
+  justify-items: center;
+}
+.group__photos .group__figure {
+  margin-top: 1em;
+  border-radius: 50%;
+  width: 15em;
+  height: 14.3em;
+  overflow: hidden;
+}
+
+.group__figure .figure__wrap-img {
+  background: linear-gradient(
+    0deg,
+    rgba(34, 195, 182, 1) 0%,
+    rgba(216, 27, 218, 1) 100%
+  );
+  width: 14.9em;
+  height: 14.7em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.group__figure img {
+  background: white;
+  width: 14em;
+  height: 14em;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  cursor: pointer;
+}
+
+/* FIGURE TEXT */
+.group__figure .figure__wrap-text {
+  width: 14.1em;
+  height: 14.1em;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  bottom: 101%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+.group__figure .figure__wrap-text figcaption {
+  font-size: 2rem;
+  color: whitesmoke;
+}
+.group__figure .figure__text-leaving {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 1s;
+  animation: leaving 1s;
+}
+.group__figure .figure__text-coming {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 1s, opacity 1s;
+  animation: coming 1s;
+}
+
+@keyframes coming {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: 100%;
+  }
+}
+@keyframes leaving {
+  from {
+    bottom: 100%;
+  }
+  to {
+    bottom: 0;
+  }
+}
+/* HISTOIRE  */
+.group__description {
+  background: url("img/presentation_bg.jpg");
+  background-size: cover;
+  background-position: bottom;
+  height: fit-content;
+}
+h2 {
+  font-size: 4.5rem;
+  text-align: center;
+  background: #fff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 1em 0 0.5em 0;
+}
+.group__description .description__quotes {
+  font-family: "Mali", cursive;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.description__quotes .quote {
+  padding: 1.5em 0;
+  width: 70%;
+  position: relative;
+  opacity: 0;
+  transition: transform 1.3s, opacity 1.3s;
+}
+.quote__left {
+  float: left;
+  transform: translateX(-80%);
+}
+.quote__right {
+  transform: translateX(80%);
+  float: right;
+}
+.description__quotes .quote__right-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+.description__quotes .quote__left-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+.ruby {
+  color: #FF71BA;
+  text-shadow: 0px 0px 5px #ffc1e1;
+  ;
+}
+.hitch {
+  color: #F971FF;
+  text-shadow: 0px 0px 5px #fbb5ff;
+}
+.zipp {
+  color: #B271FF;
+  text-shadow: 0px 0px 5px #d4b1ff;
+
+}
+.izzy {
+  color: #5768ff;
+  text-shadow: 0px 0px 5px #b1b9ff;
+}
+.sunny {
+  color:#4AA6DE;
+  text-shadow: 0px 0px 5px #bbe5ff;
+}
+.group__video {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* CONCERTS */
+#concerts {
+  border: solid black;
+  background: black;
+  margin: 2em 0;
+}
+
+.concerts__card {
+  width: 80%;
+  margin: 0 auto;
+  border: solid pink;
+}

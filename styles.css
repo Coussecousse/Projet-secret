@@ -401,14 +401,12 @@ h2 {
 .concerts__card {
   width: 80%;
   margin: 0 auto;
-  border: solid pink;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1em;
 }
 .card {
   background-color: white;
-  border: solid white; 
   height: 600px;
   background: #58335a;
   border-radius: 10px;
@@ -418,25 +416,29 @@ h2 {
   width: 100%;
   object-fit: cover;
   object-position: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius:  10px;
   clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
 }
 .date {
   height: 20%;
-  border: solid blue;
   transform: translateY(-30px)
 
 }
 .card__city {
-  border: solid red;
   transform: translateY(-40px)
 }
 h3 {
   text-align: center;
   color: white;
   font-size: 3.5rem;
+  text-shadow: 3px 2px 0px rgba(255, 255, 255, 0.3);
+
 }
 .card__date, .card__counter {
+  text-align: center;
+  font-size: 2rem;
+  text-shadow: 3px 2px 0px rgba(255, 255, 255, 0.3);
   height: 50%;
   color: snow;
-  border: solid red;
 }

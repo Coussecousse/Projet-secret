@@ -195,8 +195,13 @@ function addDate(element, date) {
     let hours = date[x].getHours();
     let minutes = date[x].getMinutes();
 
-    element[x].children[0].innerText =
+    if (day < 10) {
+      element[x].children[0].innerText = "0" +
       day + " / 0" + month + " / " + year + "  " + hours + ":" + minutes + "0";
+    } else {
+      element[x].children[0].innerText =
+        day + " / 0" + month + " / " + year + "  " + hours + ":" + minutes + "0";
+    }
   }
 }
 
@@ -218,6 +223,13 @@ let timer = setInterval(function () {
     (listTimeBetween[0] % (1000 * 60 * 60)) / (1000 * 60)
   );
   let secondscalcul = Math.floor((listTimeBetween[0] % (1000 * 60)) / 1000);
+  if (hourcalcul < 10){
+    hourcalcul = '0'+ hourcalcul
+  } else if (minutescalcul < 10) {
+    minutescalcul = '0'+ minutescalcul
+  } else if (secondscalcul < 10) {
+    secondscalcul = '0' + secondscalcul
+  }
 
   for (let x = 0; x < listDate.length; x++) {
     let daycalcul = Math.floor(listTimeBetween[x] / (1000 * 60 * 60 * 24));

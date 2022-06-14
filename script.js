@@ -137,38 +137,92 @@ figures.addEventListener("click", (e) => {
 
 //Cette fonction récupère un sélecteur qu'il va transformer en l'élément et les options à appliquer s'il y en a. Pour chaque élément elle va appliquer addObserver
 function scrollTrigger(selector, options = {}) {
-  let elements = document.querySelectorAll(selector)
-  elements = Array.from(elements)
-  elements.forEach(element => {
-    addObserver(element,options)
-  })
+  let elements = document.querySelectorAll(selector);
+  elements = Array.from(elements);
+  elements.forEach((element) => {
+    addObserver(element, options);
+  });
 }
-function addObserver(element, options){
+function addObserver(element, options) {
   //S'il n'y a pas l'api dans le navigateur les éléments vont s'afficher normalement
-  if(!('IntersectionObserver' in window)) {
-    if (element.classList.contains('quote__left')) {
-      entry.target.classList.add('quote__left-animate')
+  if (!("IntersectionObserver" in window)) {
+    if (element.classList.contains("quote__left")) {
+      entry.target.classList.add("quote__left-animate");
     } else {
-      entry.target.classList.add('quote__right-animate')
+      entry.target.classList.add("quote__right-animate");
     }
-    return
+    return;
   }
-  //IntersectionObserver prend une entrée et son observer. On met l'observer sur chaque élément qui arrive puis on l'enlève 
-  let observer = new IntersectionObserver((entries,observer) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-          if (element.classList.contains('quote__left')) {
-            entry.target.classList.add('quote__left-animate')
-          } else {
-            entry.target.classList.add('quote__right-animate')
-          }
-          observer.unobserve(entry.target)
+  //IntersectionObserver prend une entrée et son observer. On met l'observer sur chaque élément qui arrive puis on l'enlève
+  let observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        if (element.classList.contains("quote__left")) {
+          entry.target.classList.add("quote__left-animate");
+        } else {
+          entry.target.classList.add("quote__right-animate");
         }
-      })
-    }, options)
-    observer.observe(element)
+        observer.unobserve(entry.target);
+      }
+    });
+  }, options);
+  observer.observe(element);
 }
-scrollTrigger('.quote', {
-  rootMargin:'0px',
-  treshold: 1.0
-})
+scrollTrigger(".quote", {
+  rootMargin: "0px",
+  treshold: 1.0,
+});
+
+//On fait les dates ici avec le compteur
+
+const dateLille = new Date(2022, 7, 26, 20, 0, 0);
+const dateParis = new Date(2022, 8, 9, 20, 0, 0);
+const dateLyon = new Date(2022, 8, 16, 20, 0, 0);
+
+let dateContainer = document.querySelectorAll(".date");
+dateContainer = Array.from(dateContainer);
+console.log(dateContainer[0]);
+const listDate = new Array(dateLille, dateParis, dateLyon);
+console.log(listDate);
+
+addDate(dateContainer, listDate);
+
+function addDate(element, date) {
+  for (let x = 0; x < listDate.length; x++) {
+    let year = date[x].getFullYear();
+    let month = date[x].getMonth();
+    let day = date[x].getDate();
+    let hours = date[x].getHours();
+    let minutes = date[x].getMinutes();
+
+    element[x].children[0].innerText =
+      day + " / 0" + month + " / " + year + "  " + hours + ":" + minutes + "0";
+  }
+}
+
+let timer = setInterval(function () {
+  let now = new Date().getTime();
+
+  let timeBetweenLille = listDate[0] - now;
+  let timeBetweenParis = listDate[1] - now;
+  let timeBetweenLyon = listDate[2] - now;
+  const listTimeBetween = new Array(
+    timeBetweenLille,
+    timeBetweenParis,
+    timeBetweenLyon
+  );
+  let hourcalcul = Math.floor(
+    (listTimeBetween[0] % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  let minutescalcul = Math.floor(
+    (listTimeBetween[0] % (1000 * 60 * 60)) / (1000 * 60)
+  );
+  let secondscalcul = Math.floor((listTimeBetween[0] % (1000 * 60)) / 1000);
+
+  for (let x = 0; x < listDate.length; x++) {
+    let daycalcul = Math.floor(listTimeBetween[x] / (1000 * 60 * 60 * 24));
+
+    dateContainer[x].children[1].innerText =
+      daycalcul + "j " + hourcalcul + ":" + minutescalcul + ":" + secondscalcul;
+  }
+}, 1000);

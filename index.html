@@ -53,9 +53,9 @@
       <section id="home">
         <div class="carousel">
           <div class="carousel__imgs">
-            <img src="img/test.jpg" alt="" class="current_img first_img" />
-            <img src="img/home5.jpg" alt="" class="middle_img" />
-            <img src="img/home3.jpg" alt="" class="last_img" />
+            <img src="img/test.jpg" alt="" class="current_img first_img" style="object-position: center"/>
+            <img src="img/home5.jpg" alt="" class="middle_img" style="object-position: 50% 85%"/>
+            <img src="img/home3.jpg" alt="" class="last_img" style="object-position: top"/>
           </div>
           <div class="carousel__sliders">
             <i class="fa-solid fa-chevron-left fa-lg slide"></i>
@@ -198,8 +198,10 @@
             <div class="card__city">
               <h3>Lille</h3>
             </div>
-            <p class="card__date"></p>
-            <p class="card__counter"></p>
+            <div class="date lille">
+              <p class="card__date"></p>
+              <p class="card__counter "></p>
+            </div>
             <button class="card__tickets">Tickets</button>
           </div>
         <div class="card card_glowing">
@@ -207,8 +209,10 @@
           <div class="card__city">
             <h3>Paris</h3>
           </div>
-          <p class="card__date">16/08/2022</p>
-          <p class="card__counter"></p>
+          <div class="date paris">
+            <p class="card__date"></p>
+            <p class="card__counter"></p>
+          </div>
           <button class="card__tickets">Tickets</button>
           <div class="red sold">SOLD OUT!</div>
         </div>
@@ -217,8 +221,10 @@
           <div class="card__city">
             <h3>Lyon</h3>
           </div>
-          <p class="card__date"></p>
-          <p class="card__counter"></p>
+          <div class="date lyon">
+            <p class="card__date"></p>
+            <p class="card__counter"></p>
+          </div>
           <button class="card__tickets">Tickets</button>
         </div>
       </section>

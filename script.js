@@ -114,7 +114,7 @@ function addActiveClass(firstChild) {
     divBtn.children[2].classList.add("slider__active");
   }
 }
-
+//GROUP PRESENTATIONS PHOTOS
 const figures = document.querySelector(".group__photos");
 
 figures.addEventListener("click", (e) => {
@@ -133,6 +133,9 @@ figures.addEventListener("click", (e) => {
   }
 });
 
+//ICI c'est les éléments qui s'affichent en fonction de la position sur l'écran
+
+//Cette fonction récupère un sélecteur qu'il va transformer en l'élément et les options à appliquer s'il y en a. Pour chaque élément elle va appliquer addObserver
 function scrollTrigger(selector, options = {}) {
   let elements = document.querySelectorAll(selector)
   elements = Array.from(elements)
@@ -141,6 +144,7 @@ function scrollTrigger(selector, options = {}) {
   })
 }
 function addObserver(element, options){
+  //S'il n'y a pas l'api dans le navigateur les éléments vont s'afficher normalement
   if(!('IntersectionObserver' in window)) {
     if (element.classList.contains('quote__left')) {
       entry.target.classList.add('quote__left-animate')
@@ -149,6 +153,7 @@ function addObserver(element, options){
     }
     return
   }
+  //IntersectionObserver prend une entrée et son observer. On met l'observer sur chaque élément qui arrive puis on l'enlève 
   let observer = new IntersectionObserver((entries,observer) => {
     entries.forEach(entry => {
       if(entry.isIntersecting){
@@ -164,6 +169,6 @@ function addObserver(element, options){
     observer.observe(element)
 }
 scrollTrigger('.quote', {
-  rootMargin:'-150px',
+  rootMargin:'0px',
   treshold: 1.0
 })

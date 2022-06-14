@@ -225,9 +225,11 @@ let timer = setInterval(function () {
   let secondscalcul = Math.floor((listTimeBetween[0] % (1000 * 60)) / 1000);
   if (hourcalcul < 10){
     hourcalcul = '0'+ hourcalcul
-  } else if (minutescalcul < 10) {
+  }
+  if (minutescalcul < 10) {
     minutescalcul = '0'+ minutescalcul
-  } else if (secondscalcul < 10) {
+  }
+  if (secondscalcul < 10) {
     secondscalcul = '0' + secondscalcul
   }
 

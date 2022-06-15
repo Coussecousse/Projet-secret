@@ -326,7 +326,7 @@ h1 {
 }
 /* HISTOIRE  */
 .group__description {
-  background: url("img/presentation_bg.jpg");
+  background: url("img/presentation_bg.webp");
   background-size: none;
   background-position: bottom right;
   background-repeat: no-repeat;
@@ -398,7 +398,7 @@ h2 {
 
 /* CONCERTS */
 #concerts {
-  background: url("img/convert-bg.png") no-repeat center/cover;
+  background: url("img/convert-bg.webp") no-repeat center/cover;
   margin: 9em 0 0 0;
   padding: 0.5em 0 10em 0;
   width: 100vw;
@@ -491,13 +491,13 @@ h3 {
 
 /* CONTACT */
 #contact {
-  background: url('img/contact-bg.jpg') no-repeat bottom/cover;
+  background: url('img/contact-bg.webp') no-repeat bottom/cover;
   height: 82vh;
   width: 100vw;
   display: flex;
 }
 .contact__img {
-  width: 40%;
+  width: 34%;
   position: absolute;
   align-self: end;
 }

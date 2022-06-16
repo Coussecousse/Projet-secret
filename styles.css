@@ -84,7 +84,7 @@ header .fa-heart-circle-plus,
 }
 
 /*____________________ NAV__MENU ___________________*/
-header nav ul {
+header nav .ul-mobile {
   position: absolute;
   width: 100%;
   list-style: none;
@@ -616,4 +616,8 @@ footer {
 .licence {
   align-self: center;
   margin: 2em;
+}
+
+@media all and ({
+  
 }

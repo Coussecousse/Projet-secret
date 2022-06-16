@@ -154,7 +154,7 @@ header .mobile-nav-not-hidden {
   display: flex;
   flex-direction: column;
   height: 100%;
-  max-width: 60%;
+  width: 60%;
   margin: 0 auto;
 }
 #home .carousel__imgs {
@@ -517,7 +517,7 @@ h3 {
   font-weight: bold;
   font-size: clamp(1.5rem, 5vw, 2rem);
   z-index: 1;
-  transform: translate(-980px, -70px) rotate(-25deg);
+  transform: translate(-98px, -70px) rotate(-25deg);
 }
 
 /* CONTACT */
@@ -650,5 +650,29 @@ footer {
 }
 
 @media all and (max-width: 768px) {
-  
+  #home .carousel {
+    width: 100%;
+  }
+  .concerts__card {
+    width: 90%;
+  }
+  .contact__img {
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+    transform: translateY(-20%);
+  }
+  #contact {
+    padding: 2em 0 0 0;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+  #contact form {
+    width: 90%;
+    margin: 2em auto;
+  }
+  .fa-heart {
+    display: none;
+  }
 }

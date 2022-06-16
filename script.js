@@ -181,9 +181,7 @@ const dateLyon = new Date(2022, 8, 16, 20, 0, 0);
 
 let dateContainer = document.querySelectorAll(".date");
 dateContainer = Array.from(dateContainer);
-console.log(dateContainer[0]);
 const listDate = new Array(dateLille, dateParis, dateLyon);
-console.log(listDate);
 
 addDate(dateContainer, listDate);
 

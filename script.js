@@ -130,6 +130,31 @@ figureS.forEach((element) => {
   });
 })
 
+// ACTIVE MENU 
+const navBtn = document.querySelector(".nav__menu")
+const navMenu = document.querySelector("nav");
+const headerContainer = document.querySelector(".container")
+const header = document.querySelector('header')
+if (window.matchMedia("(max-width: 425px)").matches)  {
+  navMenu.remove();
+  navBtn.remove();
+
+  headerContainer.append(navBtn)
+  header.append(navMenu)
+  const ul = navMenu.children[0]
+  ul.classList.add('mobile-nav-hidden')
+  ul.classList.remove('ul-mobile-not')
+  ul.classList.add('ul-mobile')
+
+} else {
+  navMenu.remove();
+  navBtn.remove();
+
+  headerContainer.append(navMenu);
+  navMenu.children[0].classList.remove('mobile-nav-hidden')
+}
+
+
 
 //ICI c'est les éléments qui s'affichent en fonction de la position sur l'écran
 
@@ -255,3 +280,4 @@ let timer = setInterval(function () {
       daycalcul + "j " + hourcalcul + ":" + minutescalcul + ":" + secondscalcul;
   }
 }, 1000);
+

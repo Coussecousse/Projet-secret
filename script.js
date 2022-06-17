@@ -169,7 +169,7 @@ function addObserver(element, options) {
   observer.observe(element);
 }
 scrollTrigger(".quote", {
-  rootMargin: "0px",
+  rootMargin: "-1000px",
   treshold: 1.0,
 });
 

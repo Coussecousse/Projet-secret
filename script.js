@@ -115,23 +115,21 @@ function addActiveClass(firstChild) {
   }
 }
 //GROUP PRESENTATIONS PHOTOS
-const figures = document.querySelector(".group__photos");
+const figures = document.querySelectorAll(".group__figure");
+const figureS = Array.from(figures)
+figureS.forEach((element) => {
+  element.addEventListener("click", (e) => {    
+    const selectionnedText = element.querySelector(".figure__wrap-text");
+    if (selectionnedText.classList.contains("figure__text-leaving")) {
+      selectionnedText.classList.remove("figure__text-leaving");
+      selectionnedText.classList.add("figure__text-coming");
+    } else {
+      selectionnedText.classList.remove("figure__text-coming");
+      selectionnedText.classList.add("figure__text-leaving");
+    }
+  });
+})
 
-figures.addEventListener("click", (e) => {
-  const selectionnedFigure = e.target.closest("figure");
-
-  if (!selectionnedFigure) return;
-
-  const selectionnedText =
-    selectionnedFigure.querySelector(".figure__wrap-text");
-  if (selectionnedText.classList.contains("figure__text-leaving")) {
-    selectionnedText.classList.remove("figure__text-leaving");
-    selectionnedText.classList.add("figure__text-coming");
-  } else {
-    selectionnedText.classList.remove("figure__text-coming");
-    selectionnedText.classList.add("figure__text-leaving");
-  }
-});
 
 //ICI c'est les éléments qui s'affichent en fonction de la position sur l'écran
 
@@ -169,7 +167,7 @@ function addObserver(element, options) {
   observer.observe(element);
 }
 scrollTrigger(".quote", {
-  rootMargin: "-1000px",
+  rootMargin: "-100px",
   treshold: 1.0,
 });
 
@@ -194,11 +192,30 @@ function addDate(element, date) {
     let minutes = date[x].getMinutes();
 
     if (day < 10) {
-      element[x].children[0].innerText = "0" +
-      day + " / 0" + month + " / " + year + "  " + hours + ":" + minutes + "0";
+      element[x].children[0].innerText =
+        "0" +
+        day +
+        " / 0" +
+        month +
+        " / " +
+        year +
+        "  " +
+        hours +
+        ":" +
+        minutes +
+        "0";
     } else {
       element[x].children[0].innerText =
-        day + " / 0" + month + " / " + year + "  " + hours + ":" + minutes + "0";
+        day +
+        " / 0" +
+        month +
+        " / " +
+        year +
+        "  " +
+        hours +
+        ":" +
+        minutes +
+        "0";
     }
   }
 }
@@ -221,14 +238,14 @@ let timer = setInterval(function () {
     (listTimeBetween[0] % (1000 * 60 * 60)) / (1000 * 60)
   );
   let secondscalcul = Math.floor((listTimeBetween[0] % (1000 * 60)) / 1000);
-  if (hourcalcul < 10){
-    hourcalcul = '0'+ hourcalcul
+  if (hourcalcul < 10) {
+    hourcalcul = "0" + hourcalcul;
   }
   if (minutescalcul < 10) {
-    minutescalcul = '0'+ minutescalcul
+    minutescalcul = "0" + minutescalcul;
   }
   if (secondscalcul < 10) {
-    secondscalcul = '0' + secondscalcul
+    secondscalcul = "0" + secondscalcul;
   }
 
   for (let x = 0; x < listDate.length; x++) {

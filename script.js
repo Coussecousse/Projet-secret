@@ -135,6 +135,7 @@ const navBtn = document.querySelector(".nav__menu")
 const navMenu = document.querySelector("nav");
 const headerContainer = document.querySelector(".container")
 const header = document.querySelector('header')
+
 if (window.matchMedia("(max-width: 425px)").matches)  {
   navMenu.remove();
   navBtn.remove();
@@ -153,7 +154,13 @@ if (window.matchMedia("(max-width: 425px)").matches)  {
   headerContainer.append(navMenu);
   navMenu.children[0].classList.remove('mobile-nav-hidden')
 }
+// CLICK MENU AND ACTIVE MENU
 
+navMenu.addEventListener('click', (e) => {
+  let path = window.location.href
+
+  console.log(path)
+})
 
 
 //ICI c'est les éléments qui s'affichent en fonction de la position sur l'écran

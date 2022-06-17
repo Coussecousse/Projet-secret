@@ -38,7 +38,7 @@ h2 {
 
 /* ______________________NAV______________________ */
 header .container {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   height: 100%;
   display: flex;
@@ -94,6 +94,10 @@ header nav .ul-mobile {
   border-top: rgba(255, 255, 255, 0.6) solid 1px;
   background: linear-gradient(#e4009d, #dca1c9);
 }
+header nav {
+  z-index: -2;
+  position: relative;
+}
 header nav a {
   text-decoration: none;
   text-transform: uppercase;
@@ -115,6 +119,7 @@ header .mobile-nav-hidden {
   transition: visibility .5s, opacity .5s ease-in;
 }
 header .mobile-nav-not-hidden {
+  z-index: 20;
   visibility: visible;
   opacity: 1;
   transition: visibility .6s, opacity .6s ease-in;
@@ -268,6 +273,22 @@ h1 {
   gap: 1em;
   justify-items: center;
 }
+#Zipp {
+  float: right;
+  width: 30%;
+}
+#Zipp .figure__wrap-img{
+  width: 35%;
+  height: 95%;
+}
+#Zipp .figure__wrap-img img{
+  width: 90%;
+  height: 80%;
+}
+.quote__zipp {
+  border: solid red;
+  width: fit-content;
+}
 .group__photos .group__figure {
   margin-top: 1em;
   border-radius: 50%;
@@ -368,6 +389,10 @@ h2 {
   font-size: clamp(.8rem, 10vw, 1.3rem);
   text-align: center;
 }
+/* .description__quotes {
+  display: flex;
+  flex-direction: column;
+} */
 .description__quotes .quote {
   padding: 1.5em 0;
   width: 70%;
@@ -376,12 +401,10 @@ h2 {
   transition: transform 1.3s, opacity 1.3s;
 }
 .quote__left {
-  float: left;
   transform: translateX(-80%);
 }
 .quote__right {
   transform: translateX(80%);
-  float: right;
 }
 .description__quotes .quote__right-animate {
   opacity: 1;
@@ -533,24 +556,27 @@ h3 {
   align-self: end;
 }
 #contact form {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 2em;
   width: 35%;
   height: 70%;
-  margin: auto 22% auto auto;
+  left: 30%;
+  margin: auto 0;
   background: rgba(255, 255, 255, .5);
   padding: 2em 0;
   border-radius: 5%;
 }
 #contact form > * {
+  z-index: 12;
   font-size: 1.1rem;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, .5);
   background: transparent;
   width: 80%;
   margin: 0 auto;
-  height: 10%;
+  height: 50px;
   padding: 0;
 }
 #contact form input[type=text], #contact form input[type=email] {
@@ -597,44 +623,44 @@ h3 {
   position: relative;
 }
 .top-left {
-  right: 62%;
-  top: 20%;
+  left: -14%;
+  top: 10%;
   animation: 1s ease-in 1s infinite alternate heartMovingTopLeft;
 }
 
 .top-right {
-  top: 40%;
-  right: 23%;
+  top: 35%;
+  left: 25%;
   animation: 1.3s ease-in 1.3s infinite alternate heartMovingTopRight;
 
 }
 .bottom-right {
-  top: 75%;
-  right: 36%;
+  top: 70%;
+  left: 15%;
   animation: .8s ease-in 1s infinite alternate heartMovingBottomRight;
 }
 @keyframes heartMovingTopLeft {
   from {
-    transform: translateY(-5px)  rotate(-20deg);
+    transform: translateY(-5px)  rotate(-20deg) scale(1);
   } 
   to {
-    transform: translateY(5px)  rotate(-20deg);
+    transform: translateY(5px)  rotate(-20deg) scale(1.2);
   }
 }
 @keyframes heartMovingTopRight {
   from {
-    transform: translateY(-5px)  rotate(35deg);
+    transform: translateY(-5px)  rotate(35deg) scale(1);
   } 
   to {
-    transform: translateY(5px)  rotate(30deg);
+    transform: translateY(5px)  rotate(30deg) scale(1.2);
   }
 }
 @keyframes heartMovingBottomRight {
   from {
-    transform: translateY(-5px)  rotate(10deg);
+    transform: translateY(-5px)  rotate(10deg) scale(1);
   } 
   to {
-    transform: translateY(5px)  rotate(10deg);
+    transform: translateY(5px)  rotate(10deg) scale(1.2);
   }
 }
 
@@ -657,7 +683,7 @@ footer {
     width: 90%;
   }
   .contact__img {
-    width: 80%;
+    width: 90%;
     position: relative;
     margin: 0 auto;
     transform: translateY(-20%);
@@ -669,10 +695,23 @@ footer {
     flex-direction: column;
   }
   #contact form {
+    position: static;
     width: 90%;
     margin: 2em auto;
   }
   .fa-heart {
-    display: none;
+    display: none !important;
   }
 }
+ @media all and (min-width: 2560px) {
+  #contact form {
+    width: 30%;
+  }
+  #contact img {
+    width: 30%;
+    left: 2%
+  }
+  .top-left{
+    left: -5%;
+  }
+} 

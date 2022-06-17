@@ -223,11 +223,7 @@ i:hover {
 #group-presentation {
   overflow: hidden;
   margin-top: 2em;
-  background: linear-gradient(
-    0deg,
-    rgba(125, 215, 215, 1) 72%,
-    rgba(255, 255, 255, 1) 88%
-  );
+  background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(125,215,215,1) 43%, rgba(125,215,215,1) 72%, rgba(255,255,255,1) 88%);
   width: 100vw;
 }
 h1 {
@@ -246,9 +242,12 @@ h1 {
   color: violet;
   height: 3em;
   font-size: 1.1rem;
-  text-align: center;
 }
 .click > * {
+  text-align: center;
+  float: right;
+  right: 16.2%;
+  width: fit-content;
   position: relative;
   animation: topBottom 0.6s alternate infinite;
 }
@@ -278,8 +277,6 @@ h1 {
   height: 13em;
   overflow: hidden;
 }
-
-
 .group__figure .figure__wrap-img {
   background: linear-gradient(
     0deg,
@@ -326,14 +323,14 @@ h1 {
   visibility: hidden;
   opacity: 0;
   transform: translateY(0);
-  transition: visibility 1s, opacity 1s;
+  transition: visibility .5s, opacity .5s ease-out;
   animation: leaving 1s;
 }
 .group__figure .figure__text-coming {
   visibility: visible;
   opacity: 1;
   transform: translateY(-100%);
-  transition: visibility 1s, opacity 1s; 
+  transition: visibility 1.3s, opacity 1.3s ease-in; 
    animation: coming 1s; 
 }
 
@@ -622,7 +619,7 @@ h3 {
 
 }
 .bottom-right {
-  top: 70%;
+  top: 73%;
   left: 15%;
   animation: .8s ease-in 1s infinite alternate heartMovingBottomRight;
 }

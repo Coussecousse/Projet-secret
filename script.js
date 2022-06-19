@@ -164,8 +164,9 @@ if (window.matchMedia("(max-width: 767px)").matches) {
 
 let section = document.querySelectorAll("section");
 let aList = document.querySelectorAll(".nav_a");
-console.log(aList);
+
 activeLink(aList[0]); //Met l'active à première section
+
 function activeLink(a) {
   aList.forEach((item) => item.classList.remove("active"));
   a.classList.add("active");

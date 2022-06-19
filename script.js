@@ -136,7 +136,7 @@ const navMenu = document.querySelector("nav");
 const headerContainer = document.querySelector(".container")
 const header = document.querySelector('header')
 
-if (window.matchMedia("(max-width: 425px)").matches)  {
+if (window.matchMedia("(max-width: 767px)").matches)  {
   navMenu.remove();
   navBtn.remove();
 
@@ -156,14 +156,36 @@ if (window.matchMedia("(max-width: 425px)").matches)  {
 }
 // CLICK MENU AND ACTIVE MENU
 
-navMenu.addEventListener('click', (e) => {
-  let path = window.location.href
-
-  console.log(path)
+let section = document.querySelectorAll('section');
+let aList = document.querySelectorAll('.nav_a');
+console.log(aList)
+activeLink(aList[0]); //Met l'active à première section
+function activeLink(a) {
+  aList.forEach((item) => item.classList.remove('active'));
+  a.classList.add('active');
+}
+aList.forEach((item) => {
+  item.addEventListener('click', function() { //dès qu'on clique, met le active
+    activeLink(this);
+  })
 })
+//change l'active en fonction de la position de l'élément par rapport au top
+//de la page et de sa taille
+window.onscroll = () => {     
+  section.forEach(sec => {   
+    let top = window.scrollY + 200; //obligé de rajouter pour dernière section
+    let offset = sec.offsetTop;
+    let height = sec.offsetHeight;
 
+    let id = sec.getAttribute('id');
 
-//ICI c'est les éléments qui s'affichent en fonction de la position sur l'écran
+    if (top >= offset && top < offset + height) {
+      const target = document.querySelector(`[href='#${id}']`);
+      activeLink(target);
+    }
+  })
+}
+
 
 //Cette fonction récupère un sélecteur qu'il va transformer en l'élément et les options à appliquer s'il y en a. Pour chaque élément elle va appliquer addObserver
 function scrollTrigger(selector, options = {}) {
@@ -199,7 +221,7 @@ function addObserver(element, options) {
   observer.observe(element);
 }
 scrollTrigger(".quote", {
-  rootMargin: "-100px",
+  rootMargin: "-50px",
   treshold: 1.0,
 });
 

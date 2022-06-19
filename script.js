@@ -5,6 +5,7 @@
 //En attendant bienvenue dans le labyrinthe de mon Javascript !
 
 
+
 const nav__menu = document.querySelector(".nav__menu");
 const hiddenMenu = document.querySelector(".mobile-nav-hidden");
 

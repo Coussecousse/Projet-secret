@@ -57,8 +57,10 @@ a {
   color: white;
 }
 .active {
-  color:white;
-  text-shadow:#FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #ffffff 0px 0px 20px, #ffffff 0px 0px 30px, #ffffff 0px 0px 40px, #ffffff 0px 0px 50px, #ffffff 0px 0px 75px;;
+  color: white;
+  text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+    #ffffff 0px 0px 20px, #ffffff 0px 0px 30px, #ffffff 0px 0px 40px,
+    #ffffff 0px 0px 50px, #ffffff 0px 0px 75px;
 }
 
 /* ______________________NAV__BOUTTON_______________ */
@@ -114,7 +116,7 @@ header nav .ul-mobile {
   margin: auto 0;
 }
 .ul-mobile-not > * > a {
-  padding: .5em 0 0 0;
+  padding: 0.5em 0 0 0;
 }
 .ul-mobile-not > * > a:hover {
   border-top: solid rgba(255, 255, 255, 0.5) 1px;
@@ -248,12 +250,12 @@ header .mobile-nav-not-hidden {
   overflow: hidden;
   margin-top: 2em;
   background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(125, 215, 215, 1) 22%,
-      rgba(125, 215, 215, 1) 72%,
-      rgba(255, 255, 255, 1) 88%
-    );
+    0deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(125, 215, 215, 1) 22%,
+    rgba(125, 215, 215, 1) 72%,
+    rgba(255, 255, 255, 1) 88%
+  );
   width: 100vw;
 }
 h1 {
@@ -701,30 +703,31 @@ footer {
 @media screen and (max-width: 768px) {
   #home .carousel {
     width: 100%;
-    }
+  }
   .description__quotes {
     display: grid;
     grid-row: repeat(5, 1fr);
     gap: 1em;
-  } 
+  }
   .group__figure {
     height: 12em;
     overflow: hidden;
-  } 
+  }
   .quote__poney {
     display: flex;
     flex-direction: column;
     height: fit-content;
-  } 
-  .quote__poney .group__figure, .quote__poney .quote {
+  }
+  .quote__poney .group__figure,
+  .quote__poney .quote {
     width: 100%;
-  } 
+  }
   .quote p {
     width: 100%;
   }
   .click {
     width: fit-content;
-    right:0;
+    right: 0;
     margin: 0 auto;
   }
   .contact__img {
@@ -748,21 +751,21 @@ footer {
     display: none !important;
   }
 }
-@media screen and (min-width : 768px) {
+@media screen and (min-width: 768px) {
   header .container {
     width: 90%;
   }
 }
-@media screen and (min-width : 1024px) {
+@media screen and (min-width: 1024px) {
   header .container {
     width: 80%;
     padding-right: 5em;
   }
-  nav{
+  nav {
     width: 50%;
   }
   header {
-    padding:.5em 0;
+    padding: 0.5em 0;
   }
 }
 @media screen and (min-width: 2560px) {

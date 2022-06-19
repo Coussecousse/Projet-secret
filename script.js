@@ -116,9 +116,9 @@ function addActiveClass(firstChild) {
 }
 //GROUP PRESENTATIONS PHOTOS
 const figures = document.querySelectorAll(".group__figure");
-const figureS = Array.from(figures)
+const figureS = Array.from(figures);
 figureS.forEach((element) => {
-  element.addEventListener("click", (e) => {    
+  element.addEventListener("click", (e) => {
     const selectionnedText = element.querySelector(".figure__wrap-text");
     if (selectionnedText.classList.contains("figure__text-leaving")) {
       selectionnedText.classList.remove("figure__text-leaving");
@@ -128,64 +128,63 @@ figureS.forEach((element) => {
       selectionnedText.classList.add("figure__text-leaving");
     }
   });
-})
+});
 
-// ACTIVE MENU 
-const navBtn = document.querySelector(".nav__menu")
+// ACTIVE MENU
+const navBtn = document.querySelector(".nav__menu");
 const navMenu = document.querySelector("nav");
-const headerContainer = document.querySelector(".container")
-const header = document.querySelector('header')
+const headerContainer = document.querySelector(".container");
+const header = document.querySelector("header");
 
-if (window.matchMedia("(max-width: 767px)").matches)  {
+if (window.matchMedia("(max-width: 767px)").matches) {
   navMenu.remove();
   navBtn.remove();
 
-  headerContainer.append(navBtn)
-  header.append(navMenu)
-  const ul = navMenu.children[0]
-  ul.classList.add('mobile-nav-hidden')
-  ul.classList.remove('ul-mobile-not')
-  ul.classList.add('ul-mobile')
-
+  headerContainer.append(navBtn);
+  header.append(navMenu);
+  const ul = navMenu.children[0];
+  ul.classList.add("mobile-nav-hidden");
+  ul.classList.remove("ul-mobile-not");
+  ul.classList.add("ul-mobile");
 } else {
   navMenu.remove();
   navBtn.remove();
 
   headerContainer.append(navMenu);
-  navMenu.children[0].classList.remove('mobile-nav-hidden')
+  navMenu.children[0].classList.remove("mobile-nav-hidden");
 }
 // CLICK MENU AND ACTIVE MENU
 
-let section = document.querySelectorAll('section');
-let aList = document.querySelectorAll('.nav_a');
-console.log(aList)
+let section = document.querySelectorAll("section");
+let aList = document.querySelectorAll(".nav_a");
+console.log(aList);
 activeLink(aList[0]); //Met l'active à première section
 function activeLink(a) {
-  aList.forEach((item) => item.classList.remove('active'));
-  a.classList.add('active');
+  aList.forEach((item) => item.classList.remove("active"));
+  a.classList.add("active");
 }
 aList.forEach((item) => {
-  item.addEventListener('click', function() { //dès qu'on clique, met le active
+  item.addEventListener("click", function () {
+    //dès qu'on clique, met le active
     activeLink(this);
-  })
-})
+  });
+});
 //change l'active en fonction de la position de l'élément par rapport au top
 //de la page et de sa taille
-window.onscroll = () => {     
-  section.forEach(sec => {   
+window.onscroll = () => {
+  section.forEach((sec) => {
     let top = window.scrollY + 200; //obligé de rajouter pour dernière section
     let offset = sec.offsetTop;
     let height = sec.offsetHeight;
 
-    let id = sec.getAttribute('id');
+    let id = sec.getAttribute("id");
 
     if (top >= offset && top < offset + height) {
       const target = document.querySelector(`[href='#${id}']`);
       activeLink(target);
     }
-  })
-}
-
+  });
+};
 
 //Cette fonction récupère un sélecteur qu'il va transformer en l'élément et les options à appliquer s'il y en a. Pour chaque élément elle va appliquer addObserver
 function scrollTrigger(selector, options = {}) {
@@ -309,4 +308,3 @@ let timer = setInterval(function () {
       daycalcul + "j " + hourcalcul + ":" + minutescalcul + ":" + secondscalcul;
   }
 }, 1000);
-

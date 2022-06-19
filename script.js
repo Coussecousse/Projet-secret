@@ -1,3 +1,10 @@
+//Bienvenue ici. Je préfère vous prévenir, ça part un peu dans tous les sens
+//En plus je ne commente jamais mon code. Je sais c'est une mauvaise habitude
+//Même moi je me perds dans mes idées, c'est pour dire !
+//Bref, peut être qu'un jour je modifierais en quelque chose de propre
+//En attendant bienvenue dans le labyrinthe de mon Javascript !
+
+
 const nav__menu = document.querySelector(".nav__menu");
 const hiddenMenu = document.querySelector(".mobile-nav-hidden");
 

@@ -388,7 +388,6 @@ h1 {
 /* HISTOIRE  */
 .group__description {
   background: url("img/presentation_bg.webp");
-  background-size: none;
   background-position: bottom right;
   background-repeat: no-repeat;
 }
@@ -599,7 +598,6 @@ h3 {
 #contact form input[type="text"],
 #contact form input[type="email"] {
   padding-left: 10px;
-  z-index: 20;
 }
 ::placeholder {
   color: rgba(0, 0, 0, 0.5);
@@ -706,7 +704,6 @@ footer {
   }
   .description__quotes {
     display: grid;
-    grid-row: repeat(5, 1fr);
     gap: 1em;
   }
   .group__figure {

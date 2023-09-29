@@ -2,7 +2,7 @@
 
 Ce projet est le premier que j'ai fait entièrement moi-même suite à un petit challenge qu'on s'était donné entre apprenants. 
 
-## Règles :
+# Règles :
 
 Faire un site sur le thème de votre groupe de musique préféré. Il devra contenir:
 
@@ -13,4 +13,4 @@ Faire un site sur le thème de votre groupe de musique préféré. Il devra cont
 
 Niveau design, vous pouvez vous inspirer du site d'origine si il en existe un
 
-### Vous pouvez retrouver le site ici : <a href="https://coussecousse.github.io/projet-secret/" target="_blank">https://coussecousse.github.io/projet-secret/ </a>
+# Vous pouvez retrouver le site ici : <a href="https://coussecousse.github.io/projet-secret/" target="_blank">https://coussecousse.github.io/projet-secret/ </a>
